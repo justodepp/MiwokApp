@@ -1,5 +1,3 @@
-package com.example.android.miwok;
-
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -15,26 +13,29 @@ package com.example.android.miwok;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-        import android.content.Context;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.ArrayAdapter;
-        import android.widget.TextView;
 
-        import java.util.ArrayList;
+package com.example.android.miwok;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * {@link WordAdapter} is an {@link ArrayAdapter} that can provide the layout for each list item
  * based on a data source, which is a list of {@link Word} objects.
  */
-public class WordAdapter extends ArrayAdapter<Word>  {
+public class WordAdapter extends ArrayAdapter<Word> {
 
     /**
      * Create a new {@link WordAdapter} object.
      *
      * @param context is the current context (i.e. Activity) that the adapter is being created in.
-     * @param words is the list of {@link Word}s to be displayed.
+     * @param words   is the list of {@link Word}s to be displayed.
      */
     public WordAdapter(Context context, ArrayList<Word> words) {
         super(context, 0, words);

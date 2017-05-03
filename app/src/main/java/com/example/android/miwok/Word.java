@@ -1,5 +1,3 @@
-package com.example.android.miwok;
-
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -15,6 +13,8 @@ package com.example.android.miwok;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.example.android.miwok;
 
 /**
  * {@link Word} represents a vocabulary word that the user wants to learn.
