@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.android.miwok;
 
 import android.content.Context;
@@ -31,7 +15,7 @@ import java.util.ArrayList;
  * {@link WordAdapter} is an {@link ArrayAdapter} that can provide the layout for each list item
  * based on a data source, which is a list of {@link Word} objects.
  */
-public class WordAdapter extends ArrayAdapter<Word> {
+public class WordAdapter extends ArrayAdapter<Word>  {
 
     /** Resource ID for the background color for this list of words */
     private int mColorResourceId;
@@ -40,11 +24,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
      * Create a new {@link WordAdapter} object.
      *
      * @param context is the current context (i.e. Activity) that the adapter is being created in.
-     * @param words   is the list of {@link Word}s to be displayed.
+     * @param words is the list of {@link Word}s to be displayed.
+     * @param colorResourceId is the resource ID for the background color for this list of words
      */
-    public WordAdapter(Context context, ArrayList<Word> words,int colorResourceID) {
+    public WordAdapter(Context context, ArrayList<Word> words, int colorResourceId) {
         super(context, 0, words);
-        mColorResourceId = colorResourceID;
+        mColorResourceId = colorResourceId;
     }
 
     @Override
@@ -63,13 +48,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         // Get the Miwok translation from the currentWord object and set this text on
         // the Miwok TextView.
-        miwokTextView.setText(currentWord.getMiwokTranslation());
+        miwokTextView.setText(currentWord.getMiwokTranslationId());
 
         // Find the TextView in the list_item.xml layout with the ID default_text_view.
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
         // Get the default translation from the currentWord object and set this text on
         // the default TextView.
-        defaultTextView.setText(currentWord.getDefaultTranslation());
+        defaultTextView.setText(currentWord.getDefaultTranslationId());
 
         // Find the ImageView in the list_item.xml layout with the ID image.
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
